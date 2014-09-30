@@ -247,7 +247,7 @@ make_grouped_plot=function(filename, grp_data, group_data, plot_layout, colscale
             new_data[[k]]$name=opt_names[[num]][[k]]$mod_name
 				  }
 				}
-        tmaxval=max(unlist(lapply(new_data, function(x) {max(x$data)})))
+        tmaxval=max(unlist(lapply(new_data, function(x) {max(x$data, na.rm = TRUE)})))
 				if(colmaxval < tmaxval) {
 					colmaxval=tmaxval;
 				}
